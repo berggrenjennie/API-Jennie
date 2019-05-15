@@ -23,6 +23,34 @@ curl -X GET api.softhouse.rocks/users
     "__v": 0
   }, ]
   ```
+  ```
+   Statuskod 200
+   curl -X GET api.softhouse.rocks/users/1
+   {
+  "address": {
+    "geo": {
+      "lat": -37.3159,
+      "lng": 81.1496
+    },
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874"
+  },
+  "_id": "5caaef896b334800cbf66332",
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "__v": 0
+}
+  ```
+  ```
+  Statuskod 200
+   curl -X PUT api.softhouse.rocks/users/1 -H "Content-type:application/json" -d '{"name"
+:"string", "username":"string000001", "email": "email00001", "address": {"street": "string"
+, "suite": "string", "city": "string", "geo": {"lat": 0, "lng": 0}}}'
+  ```
 ```
 Statuskod 200
 curl -X GET api.softhouse.rocks/posts
@@ -63,7 +91,7 @@ curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/posts -d'
 }'
 ```
 ```
-Statuskod 200
+Statuskod 200 (Även när inte hittad)
 curl -i -X GET api.softhouse.rocks/posts/3
  {
   "_id": "5caaef896b334800cbf6633e",
