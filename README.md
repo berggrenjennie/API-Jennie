@@ -1,56 +1,6 @@
 # API-Jennie
 # TEST POSTS
-```
-Statuskod 200
-curl -X GET api.softhouse.rocks/users
-[
-  {
-    "address": {
-      "geo": {
-        "lat": -68.6102,
-        "lng": -47.0653
-      },
-      "street": "Douglas Extension",
-      "suite": "Suite 847",
-      "city": "McKenziehaven",
-      "zipcode": "59590-4157"
-    },
-    "_id": "5caaef896b334800cbf66334",
-    "id": 3,
-    "name": "Clementine Bauch",
-    "username": "Samantha",
-    "email": "Nathan@yesenia.net",
-    "__v": 0
-  }, ]
-  ```
-  ```
-   Statuskod 200
-   curl -X GET api.softhouse.rocks/users/1
-   {
-  "address": {
-    "geo": {
-      "lat": -37.3159,
-      "lng": 81.1496
-    },
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874"
-  },
-  "_id": "5caaef896b334800cbf66332",
-  "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "__v": 0
-}
-  ```
-  ```
-  Statuskod 200
-   curl -X PUT api.softhouse.rocks/users/1 -H "Content-type:application/json" -d '{"name"
-:"string", "username":"string000001", "email": "email00001", "address": {"street": "string"
-, "suite": "string", "city": "string", "geo": {"lat": 0, "lng": 0}}}'
-  ```
+
 ```
 Statuskod 200
 curl -X GET api.softhouse.rocks/posts
@@ -119,3 +69,59 @@ statuskod: 400 Bad Request
 }
 Funkar inte, saknar userId
 ```
+```
+statuskod:200
+curl -i -X DELETE api.softhouse.rocks/posts/3
+```
+# TEST USERS
+```
+Statuskod 200
+curl -X GET api.softhouse.rocks/users
+[
+  {
+    "address": {
+      "geo": {
+        "lat": -68.6102,
+        "lng": -47.0653
+      },
+      "street": "Douglas Extension",
+      "suite": "Suite 847",
+      "city": "McKenziehaven",
+      "zipcode": "59590-4157"
+    },
+    "_id": "5caaef896b334800cbf66334",
+    "id": 3,
+    "name": "Clementine Bauch",
+    "username": "Samantha",
+    "email": "Nathan@yesenia.net",
+    "__v": 0
+  }, ]
+  ```
+  ```
+   Statuskod 200
+   curl -X GET api.softhouse.rocks/users/1
+   {
+  "address": {
+    "geo": {
+      "lat": -37.3159,
+      "lng": 81.1496
+    },
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874"
+  },
+  "_id": "5caaef896b334800cbf66332",
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "__v": 0
+}
+  ```
+  ```
+  Statuskod 200
+   curl -X PUT api.softhouse.rocks/users/1 -H "Content-type:application/json" -d '{"name"
+:"string", "username":"string000001", "email": "email00001", "address": {"street": "string"
+, "suite": "string", "city": "string", "geo": {"lat": 0, "lng": 0}}}'
+  ```
