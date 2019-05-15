@@ -1,6 +1,7 @@
 # API-Jennie
 # TEST
 ```
+Statuskod 200
 curl -X GET api.softhouse.rocks/users
 [
   {
@@ -22,9 +23,9 @@ curl -X GET api.softhouse.rocks/users
     "__v": 0
   }, ]
   ```
-
-curl -X GET api.softhouse.rocks/posts
 ```
+Statuskod 200
+curl -X GET api.softhouse.rocks/posts
 [
   {
     "_id": "5caaef896b334800cbf6634a",
@@ -36,6 +37,7 @@ curl -X GET api.softhouse.rocks/posts
   },
   ```
   ```
+  Statuskod 201
   curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/users -d'{
   "name": "string",
   "username": "string unique",
@@ -50,5 +52,13 @@ curl -X GET api.softhouse.rocks/posts
       "lng": 0
     }
   }
+}'
+```
+```
+Statuskod 201
+curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/posts -d'{
+  "title": "string",
+  "body": "string",
+  "userId": number excisting
 }'
 ```
