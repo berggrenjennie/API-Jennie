@@ -35,3 +35,20 @@ curl -X GET api.softhouse.rocks/posts
     "__v": 0
   },
   ```
+  ```
+  curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/users -d'{
+  "name": "string",
+  "username": "string unique",
+  "email": "string unique",
+  "address": {
+    "street": "string",
+    "suite": "string",
+    "city": "string",
+    "zipcode": "string",
+    "geo": {
+      "lat": 0,
+      "lng": 0
+    }
+  }
+}'
+```
