@@ -111,3 +111,11 @@ curl -i -X GET api.softhouse.rocks/posts/3
   "__v": 0
 }
 ```
+
+```
+statuskod: 400 Bad Request
+{
+  "title": "string"
+}
+Funkar inte, saknar userId
+```
