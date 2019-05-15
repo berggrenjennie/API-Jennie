@@ -64,6 +64,7 @@ curl -i -X GET api.softhouse.rocks/posts/3
 
 ```
 statuskod: 400 Bad Request
+curl -i -X PATCH api.softhouse.rocks/posts/3
 {
   "title": "string"
 }
