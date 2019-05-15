@@ -1,9 +1,12 @@
-# API-Jennie
-# TEST POSTS
+# /posts
 
+## GET
+### Request
+`curl -X GET api.softhouse.rocks/posts`
+
+### Response
+`Status code: 200 (OK)`
 ```
-Statuskod 200
-curl -X GET api.softhouse.rocks/posts
 [
   {
     "_id": "5caaef896b334800cbf6634a",
@@ -15,43 +18,28 @@ curl -X GET api.softhouse.rocks/posts
   },
   ```
   
-  ```
-  Statuskod 200
-  curl -i -X PUT  api.softhouse.rocks/posts/3 -H "Content-type:application/json" -d '{
-  "title": "string",
-  "body": "string",
-  "userId": 1
-  }'
-  ```
-  ```
-  Statuskod 201
-  curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/users -d'{
-  "name": "string",
-  "username": "string unique",
-  "email": "string unique",
-  "address": {
-    "street": "string",
-    "suite": "string",
-    "city": "string",
-    "zipcode": "string",
-    "geo": {
-      "lat": 0,
-      "lng": 0
-    }
-  }
-}'
+## POST
+### Request
 ```
-```
-Statuskod 201
-curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/posts -d'{
+  curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/posts -d'{
   "title": "string",
   "body": "string",
   "userId": number excisting
-}'
+  }'
 ```
+
+### Response
+`Status code: 201 (Created)`
+  
+# /posts/{postId}
+
+## GET
+### Request
+`curl -i -X GET api.softhouse.rocks/posts/3`
+
+### Response
+`Status code: 200 (OK) (Even when not found)`
 ```
-Statuskod 200 (Även när inte hittad)
-curl -i -X GET api.softhouse.rocks/posts/3
  {
   "_id": "5caaef896b334800cbf6633e",
   "userId": 1,
@@ -62,22 +50,47 @@ curl -i -X GET api.softhouse.rocks/posts/3
 }
 ```
 
+## PUT
+### Request
 ```
-statuskod: 400 Bad Request
+  curl -i -X PUT  api.softhouse.rocks/posts/3 -H "Content-type:application/json" -d '{
+  "title": "string",
+  "body": "string",
+  "userId": 1
+  }'
+  ```
+  
+### Response
+`Status code: 200 (OK)`
+  
+## PATCH
+### Request
+```
 curl -i -X PATCH api.softhouse.rocks/posts/3
 {
   "title": "string"
 }
-Funkar inte, saknar userId
 ```
+
+### Response
+`Status code: 400 (Bad Request) (Expects userId)`
+
+## DELETE
+### Request
+`curl -i -X DELETE api.softhouse.rocks/posts/3`
+
+### Response
+`Status code: 200 (OK)`
+
+# /users
+
+## GET
+### Request
+`curl -X GET api.softhouse.rocks/users`
+
+### Response
+`Status code: 200 (OK)`
 ```
-statuskod:200
-curl -i -X DELETE api.softhouse.rocks/posts/3
-```
-# TEST USERS
-```
-Statuskod 200
-curl -X GET api.softhouse.rocks/users
 [
   {
     "address": {
@@ -98,9 +111,39 @@ curl -X GET api.softhouse.rocks/users
     "__v": 0
   }, ]
   ```
-  ```
-   Statuskod 200
-   curl -X GET api.softhouse.rocks/users/1
+
+## POST
+### Request
+```
+  curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/users -d'{
+  "name": "string",
+  "username": "string unique",
+  "email": "string unique",
+  "address": {
+    "street": "string",
+    "suite": "string",
+    "city": "string",
+    "zipcode": "string",
+    "geo": {
+      "lat": 0,
+      "lng": 0
+    }
+  }
+}'
+```
+
+### Response
+`Status code: 201 (Created)`
+
+# /users/{userId}
+
+## GET
+### Request
+`curl -X GET api.softhouse.rocks/users/1`
+
+### Response
+`Status code: 200 (OK)`
+```
    {
   "address": {
     "geo": {
@@ -120,9 +163,14 @@ curl -X GET api.softhouse.rocks/users
   "__v": 0
 }
   ```
-  ```
-  Statuskod 200
+
+## PUT
+### Request
+```
    curl -X PUT api.softhouse.rocks/users/1 -H "Content-type:application/json" -d '{"name"
 :"string", "username":"string000001", "email": "email00001", "address": {"street": "string"
 , "suite": "string", "city": "string", "geo": {"lat": 0, "lng": 0}}}'
   ```
+
+### Response
+`Status code: 200 (OK)`
