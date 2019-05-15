@@ -62,3 +62,15 @@ curl -i -X POST -H "Content-Type:application/json" api.softhouse.rocks/posts -d'
   "userId": number excisting
 }'
 ```
+```
+Statuskod 200
+curl -i -X GET api.softhouse.rocks/posts/3
+ {
+  "_id": "5caaef896b334800cbf6633e",
+  "userId": 1,
+  "id": 3,
+  "title": "some other name",
+  "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut",
+  "__v": 0
+}
+```
