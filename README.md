@@ -1,5 +1,5 @@
 # API-Jennie
-# TEST
+# TEST POSTS
 ```
 Statuskod 200
 curl -X GET api.softhouse.rocks/users
@@ -63,6 +63,15 @@ curl -X GET api.softhouse.rocks/posts
     "body": "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae",
     "__v": 0
   },
+  ```
+  
+  ```
+  Statuskod 200
+  curl -i -X PUT  api.softhouse.rocks/posts/3 -H "Content-type:application/json" -d '{
+  "title": "string",
+  "body": "string",
+  "userId": 1
+  }'
   ```
   ```
   Statuskod 201
