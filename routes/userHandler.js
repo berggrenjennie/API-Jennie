@@ -9,6 +9,7 @@ getUsers = (req, res, next) => {
 
 postUser = (req, res, next) => {
 	req.models.User.create({
+		userId: req.body.userId,
 		name: req.body.name
 	}).then((user) => {
 		return res.status(201).send(user);

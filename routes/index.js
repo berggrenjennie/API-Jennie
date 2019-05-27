@@ -24,10 +24,10 @@ router.put("/posts/:id", posts.putPostByID);
 router.patch("/posts/:id", posts.patchPostByID);
 router.delete("/posts/:id", posts.deletePostByID);
 **/
-//router.get("/users", userHandler.getUsers);
-//router.post("/users", userHandler.postUser);
+router.get("/users", userHandler.getUsers);
+router.post("/users", userHandler.postUser);
 
-router.get("/posts", postHandler.getPosts);
-router.post("/posts", postHandler.addPost);
+//router.get("/posts", postHandler.getPosts);
+//router.post("/posts", postHandler.addPost);
 
 module.exports = router;

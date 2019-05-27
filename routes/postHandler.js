@@ -8,6 +8,7 @@ getPosts = (req, res, next) => {
 
 addPost = (req, res, next) => {
 	req.models.Post.create({
+		postId: req.body.postId,
 		title: req.body.title,
 		description: req.body.description
 	}).then((post) => {
