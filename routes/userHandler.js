@@ -1,5 +1,5 @@
 
-get = (req, res, next) => {
+getUsers = (req, res, next) => {
 	req.models.User.find().then((users) => {
 		return res.send(users);
 	}).catch((error) => {
@@ -7,7 +7,7 @@ get = (req, res, next) => {
 	})
 }
 
-post = (req, res, next) => {
+postUser = (req, res, next) => {
 	req.models.User.create({
 		name: req.body.name
 	}).then((user) => {
@@ -18,6 +18,6 @@ post = (req, res, next) => {
 }
 
 module.exports = {
-	get,
-	post
+	getUsers,
+	postUser
 }
