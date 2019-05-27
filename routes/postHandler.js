@@ -6,6 +6,14 @@ getPosts = (req, res, next) => {
 	})
 }
 
+getPostsById = (req, res, next) => {
+	req.models.Post.findById(req.params.id).then((post) => {
+		return res.send(post);
+	}).catch((error) => {
+		next(error)
+	})
+}
+
 addPost = (req, res, next) => {
 	req.models.Post.create({
 		postId: req.body.postId,
@@ -18,7 +26,39 @@ addPost = (req, res, next) => {
 	})
 }
 
+editFullPost = (req, res, next) => {
+	req.models.Post.findByIdAndUpdate(req.params.id, 
+	{
+		$set: 
+	{
+		title: req.body.title,
+		description: req.body.description
+		}
+	}).then((post) => {
+			return res.send(post);
+		}).catch((error) => {
+			next(error)
+		})
+}
+
+editPartialPost = (req, res, next) => {
+	req.models.Post.findByIdAndUpdate(req.params.id, 
+	{
+		$set: 
+	{
+		title: req.body.title
+		}
+	}).then((post) => {
+			return res.send(post);
+		}).catch((error) => {
+			next(error)
+		})
+}
+
 module.exports = {
 	getPosts,
-	addPost
+	getPostsById,
+	addPost,
+	editFullPost,
+	editPartialPost
 }
