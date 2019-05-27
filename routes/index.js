@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const users = require('./users.js');
+const users = require('./users.js'); //methods from users.js
 const posts = require('./posts.js');
 const bodyData = require('./middleware.js');
+const userHandler = require('./userHandler.js');
 
 router.use(bodyData.bodyData)
 
@@ -19,5 +20,10 @@ router.get("/posts", posts.getPosts);
 router.post("/posts", posts.addPost);
 router.get("/posts/:id",posts.postById);
 router.put("/posts/:id", posts.putPostByID);
+router.patch("/posts/:id", posts.patchPostByID);
+router.delete("/posts/:id", posts.deletePostByID);
+
+//router.get("/users", userHandler.get);
+//router.post("/users", userHandler.post);
 
 module.exports = router;

@@ -19,7 +19,6 @@ const getPosts = (req, res) => {
 }
 
 const addPost = (req, res) => {
- // posts.push(req.body);
  res.sendStatus(201);
  res.send(posts.push(req.body));
 }
@@ -34,29 +33,22 @@ const putPostByID = (req, res) => {
   res.send(posts[req.params.id-1]);
 }
 
-// app.patch("/posts/:id", (req, res) => {
-//
-//   //Ej klart!!
-//   res.sendStatus(204);
-//   posts[req.params.id] = res.body;
-//   res.send(posts[req.params.id]);
-// });
+ const patchPostByID = (req, res) => {
+   res.sendStatus(204);
+   posts[req.params.id] = req.body;
+   res.send(posts[req.params.id]);
+ }
 
-// app.delete("/posts/:id", (req, res) => {
-//   // posts.splice(req.params.id - 1, 1);
-//   // console.log("Return value" + posts.splice(req.params.id -1, 1));
-//   // posts[req.params.id-1] = req.body;
-//   res.send(posts.splice(req.params.id -1, 1));
-// });
-
+ const deletePostByID = (req, res) => {
+   res.send(posts.splice(req.params.id -1, 1));
+ }
 
 module.exports = {
   paramsPost: paramsPost,
   getPosts,
   addPost,
   postById,
-  putPostByID
-
-
-
+  putPostByID,
+  patchPostByID,
+  deletePostByID
 }
