@@ -18,6 +18,10 @@ const getPosts = (req, res) => {
   res.send(posts);
 }
 
+const getPostByConditionalId = (req, res) => {
+	res.send(posts[req.query.id]);
+}
+
 const addPost = (req, res) => {
  res.sendStatus(201);
  res.send(posts.push(req.body));
@@ -46,6 +50,7 @@ const putPostByID = (req, res) => {
 module.exports = {
   paramsPost: paramsPost,
   getPosts,
+  getPostByConditionalId,
   addPost,
   postById,
   putPostByID,
