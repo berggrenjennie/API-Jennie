@@ -7,6 +7,14 @@ getUsers = (req, res, next) => {
 	})
 }
 
+getUserByConditionalId = (req, res, next) => {
+	req.models.User.find({userId: req.query.userId}).then((user) => {
+		return res.send(user);
+	}).catch((error) => {
+		next(error)
+	})
+}
+
 postUser = (req, res, next) => {
 	req.models.User.create({
 		userId: req.body.userId,
@@ -20,5 +28,6 @@ postUser = (req, res, next) => {
 
 module.exports = {
 	getUsers,
+	getUserByConditionalId,
 	postUser
 }

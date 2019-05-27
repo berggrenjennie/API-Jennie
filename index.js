@@ -21,4 +21,6 @@ db.connectDB().then(() => {
 	const listener = app.listen(port, () => {
   console.info(`Server is listening on port ${port}.`);
 });
+}).catch((error) => {
+	console.error(error);
 })

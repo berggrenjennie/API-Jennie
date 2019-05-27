@@ -25,12 +25,13 @@ router.patch("/posts/:id", posts.patchPostByID);
 router.delete("/posts/:id", posts.deletePostByID);
 **/
 //router.get("/users", userHandler.getUsers);
-//router.post("/users", userHandler.postUser);
+router.post("/users", userHandler.postUser);
+router.get("/users", userHandler.getUserByConditionalId);
 
-router.get("/posts", postHandler.getPosts);
-router.get("/posts/:id", postHandler.getPostsById);
-router.post("/posts", postHandler.addPost);
-router.put("/posts/:id", postHandler.editFullPost);
-router.patch("/posts/:id", postHandler.editPartialPost);
+//router.get("/posts", postHandler.getPosts);
+//router.get("/posts/:id", postHandler.getPostsById);
+//router.post("/posts", postHandler.addPost);
+//router.put("/posts/:id", postHandler.editFullPost);
+//router.patch("/posts/:id", postHandler.editPartialPost);
 
 module.exports = router;
